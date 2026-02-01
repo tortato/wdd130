@@ -1,11 +1,9 @@
 :root {
-    /* Color scheme */
     --primary-color: #1b4965;
-    --secondary-color: #2f6f9f;
+    --secondary-color: #5fa8d3;
     --accent1-color: #0b1320;
     --accent2-color: #f4f4f4;
 
-    /* Typography */
     --heading-font: Arial, Helvetica, sans-serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -39,7 +37,7 @@ h2 {
     color: var(--primary-color);
 }
 
-/* Basic consistent spacing */
+/* Basic spacing */
 nav,
 p,
 section,
@@ -48,66 +46,149 @@ article {
     padding: 8px;
 }
 
-/* Footer social icons: remove underline only from those links */
-.socialmedia a {
-    text-decoration: none;
+/* ========== HEADER (Grid) ========== */
+.site-header {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    background: #d9d1ff;
+    /* similar to wireframe purple */
+    padding: 16px;
 }
 
-/* Hero section with overlays */
+.logo {
+    width: 120px;
+    height: auto;
+    justify-self: center;
+}
+
+/* NAV (Flex) */
+.site-nav {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    align-items: center;
+}
+
+.site-nav a {
+    background: #fff;
+    border: 1px solid #777;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: var(--accent1-color);
+    border-radius: 4px;
+}
+
+/* ========== HERO OVERLAY ========== */
 .hero {
     position: relative;
 }
 
-/* Hero background image */
 .hero img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Hero title overlay */
 .hero h1 {
     position: absolute;
-    top: 20px;
+    top: 16px;
     width: 100%;
-    padding: 16px;
+    padding: 12px;
     text-align: center;
-    opacity: 0.85;
-    background-color: var(--accent1-color);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--accent1-color);
 }
 
-/* Article overlay box */
 .hero article {
     position: absolute;
-    bottom: 20px;
     left: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.88);
+    bottom: 20px;
+    background: rgba(255, 255, 255, 0.85);
     padding: 16px;
-    border-radius: 6px;
+    border: 1px solid #aaa;
 }
 
-/* Article image (only this one) */
 .hero article img {
     float: right;
     width: 125px;
     margin-left: 16px;
-    border-radius: 6px;
 }
 
-header {
+/* ========== HISTORY (Grid: text | image | text) ========== */
+.history h2 {
+    text-align: center;
+}
+
+.history-grid {
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 1fr 220px 1fr;
+    gap: 16px;
     align-items: center;
 }
 
-header nav {
-    display: flex;
-    gap: 16px;
-    justify-content: flex-start;
+.history-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #999;
 }
 
-footer p {
-    color: var(--secondary-color);
+/* ========== ADVENTURES (5 images horizontal) ========== */
+.adventures h2 {
+    text-align: center;
+}
+
+.adventures-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 16px 16px;
+}
+
+.adventures-grid figure {
+    margin: 0;
+    width: 140px;
+    /* adjust if needed */
+    text-align: center;
+}
+
+.adventures-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #999;
+}
+
+.adventures-grid figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+/* ========== FOOTER (text left, social right) ========== */
+.site-footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: #d9d1ff;
+    padding: 12px 16px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+    align-items: center;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    display: block;
 }
