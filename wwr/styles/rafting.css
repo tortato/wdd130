@@ -1,0 +1,110 @@
+:root {
+    /* Color scheme */
+    --primary-color: #1b4965;
+    --secondary-color: #5fa8d3;
+    --accent1-color: #0b1320;
+    --accent2-color: #f4f4f4;
+
+    /* Typography */
+    --heading-font: Arial, Helvetica, sans-serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* Reset box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body defaults */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background: var(--accent2-color);
+}
+
+/* Limit page width and center */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+/* Headings */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* Basic consistent spacing */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Footer social icons: remove underline only from those links */
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* Hero section with overlays */
+.hero {
+    position: relative;
+}
+
+/* Hero background image */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hero title overlay */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.85;
+    background-color: var(--accent1-color);
+    color: #fff;
+}
+
+/* Article overlay box */
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 16px;
+    border-radius: 6px;
+}
+
+/* Article image (only this one) */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 16px;
+    border-radius: 6px;
+}
+
+/* Optional: simple header layout */
+header {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+}
