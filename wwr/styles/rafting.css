@@ -6,6 +6,14 @@
 
     --heading-font: Arial, Helvetica, sans-serif;
     --body-font: Arial, Helvetica, sans-serif;
+
+    /* Standard helpers */
+    --white: #fff;
+
+    /* Overlay helpers (avoid rgb/rgba) */
+    --overlay-bg: var(--white);
+    --overlay-opacity-h1: 0.78;
+    --overlay-opacity-article: 0.88;
 }
 
 * {
@@ -46,10 +54,7 @@ article {
     display: grid;
     grid-template-columns: 160px 1fr;
     align-items: center;
-
-    /* USING SECONDARY COLOR */
     background: var(--secondary-color);
-
     padding: 16px;
     border: 2px solid var(--primary-color);
 }
@@ -69,7 +74,7 @@ article {
 }
 
 .site-nav a {
-    background: #fff;
+    background: var(--white);
     border: 2px solid var(--primary-color);
     padding: 10px 14px;
     text-decoration: none;
@@ -78,10 +83,9 @@ article {
 }
 
 .site-nav a:hover {
-    /* USING SECONDARY COLOR */
     background: var(--accent2-color);
     border-color: var(--accent1-color);
-    outline: 2px solid #fff;
+    outline: 2px solid var(--white);
 }
 
 /* ========== HERO OVERLAY ========== */
@@ -95,26 +99,50 @@ article {
     height: auto;
 }
 
+/* Keep text above overlay layers */
+.hero h1,
+.hero article {
+    z-index: 1;
+}
+
+/* H1 overlay without rgba */
 .hero h1 {
     position: absolute;
     top: 16px;
     width: 100%;
     padding: 12px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.78);
     color: var(--accent1-color);
     border-top: 4px solid var(--secondary-color);
     border-bottom: 4px solid var(--secondary-color);
 }
 
+.hero h1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-bg);
+    opacity: var(--overlay-opacity-h1);
+    z-index: -1;
+}
+
+/* Article overlay without rgba */
 .hero article {
     position: absolute;
     left: 20px;
     right: 20px;
     bottom: 20px;
-    background: rgba(255, 255, 255, 0.88);
     padding: 16px;
     border: 2px solid var(--secondary-color);
+}
+
+.hero article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-bg);
+    opacity: var(--overlay-opacity-article);
+    z-index: -1;
 }
 
 .hero article img {
@@ -173,8 +201,6 @@ article {
 .adventures-grid figcaption {
     margin-top: 8px;
     font-size: 0.9rem;
-
-    /* USING SECONDARY COLOR */
     color: var(--primary-color);
     border-top: 3px solid var(--secondary-color);
     padding-top: 6px;
@@ -185,10 +211,7 @@ article {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-
-    /* USING SECONDARY COLOR */
     background: var(--secondary-color);
-
     padding: 12px 16px;
     border: 2px solid var(--primary-color);
 }
@@ -210,6 +233,6 @@ article {
     display: block;
     border: 2px solid var(--primary-color);
     border-radius: 4px;
-    background: #fff;
+    background: var(--white);
     padding: 2px;
 }
