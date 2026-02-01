@@ -96,7 +96,6 @@ article {
     border-radius: 6px;
 }
 
-/* Optional: simple header layout */
 header {
     display: grid;
     grid-template-columns: 160px 1fr;
@@ -107,4 +106,8 @@ header nav {
     display: flex;
     gap: 16px;
     justify-content: flex-start;
+}
+
+footer p {
+    color: var(--secondary-color);
 }
