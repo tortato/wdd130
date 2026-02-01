@@ -8,21 +8,18 @@
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* Reset box model */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body defaults */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background: var(--accent2-color);
 }
 
-/* Limit page width and center */
 header,
 main,
 footer {
@@ -30,14 +27,12 @@ footer {
     margin: 0 auto;
 }
 
-/* Headings */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* Basic spacing */
 nav,
 p,
 section,
@@ -51,9 +46,12 @@ article {
     display: grid;
     grid-template-columns: 160px 1fr;
     align-items: center;
-    background: #d9d1ff;
-    /* similar to wireframe purple */
+
+    /* USING SECONDARY COLOR */
+    background: var(--secondary-color);
+
     padding: 16px;
+    border: 2px solid var(--primary-color);
 }
 
 .logo {
@@ -72,11 +70,18 @@ article {
 
 .site-nav a {
     background: #fff;
-    border: 1px solid #777;
+    border: 2px solid var(--primary-color);
     padding: 10px 14px;
     text-decoration: none;
     color: var(--accent1-color);
     border-radius: 4px;
+}
+
+.site-nav a:hover {
+    /* USING SECONDARY COLOR */
+    background: var(--accent2-color);
+    border-color: var(--accent1-color);
+    outline: 2px solid #fff;
 }
 
 /* ========== HERO OVERLAY ========== */
@@ -96,8 +101,10 @@ article {
     width: 100%;
     padding: 12px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
     color: var(--accent1-color);
+    border-top: 4px solid var(--secondary-color);
+    border-bottom: 4px solid var(--secondary-color);
 }
 
 .hero article {
@@ -105,18 +112,20 @@ article {
     left: 20px;
     right: 20px;
     bottom: 20px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.88);
     padding: 16px;
-    border: 1px solid #aaa;
+    border: 2px solid var(--secondary-color);
 }
 
 .hero article img {
     float: right;
     width: 125px;
     margin-left: 16px;
+    border-radius: 6px;
+    border: 2px solid var(--primary-color);
 }
 
-/* ========== HISTORY (Grid: text | image | text) ========== */
+/* ========== HISTORY (Grid) ========== */
 .history h2 {
     text-align: center;
 }
@@ -132,10 +141,10 @@ article {
     width: 100%;
     height: auto;
     display: block;
-    border: 1px solid #999;
+    border: 2px solid var(--secondary-color);
 }
 
-/* ========== ADVENTURES (5 images horizontal) ========== */
+/* ========== ADVENTURES (5 in a row) ========== */
 .adventures h2 {
     text-align: center;
 }
@@ -151,7 +160,6 @@ article {
 .adventures-grid figure {
     margin: 0;
     width: 140px;
-    /* adjust if needed */
     text-align: center;
 }
 
@@ -159,21 +167,30 @@ article {
     width: 100%;
     height: auto;
     display: block;
-    border: 1px solid #999;
+    border: 2px solid var(--secondary-color);
 }
 
 .adventures-grid figcaption {
     margin-top: 8px;
     font-size: 0.9rem;
+
+    /* USING SECONDARY COLOR */
+    color: var(--primary-color);
+    border-top: 3px solid var(--secondary-color);
+    padding-top: 6px;
 }
 
-/* ========== FOOTER (text left, social right) ========== */
+/* ========== FOOTER ========== */
 .site-footer {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    background: #d9d1ff;
+
+    /* USING SECONDARY COLOR */
+    background: var(--secondary-color);
+
     padding: 12px 16px;
+    border: 2px solid var(--primary-color);
 }
 
 .socialmedia {
@@ -191,4 +208,8 @@ article {
     width: 32px;
     height: 32px;
     display: block;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    background: #fff;
+    padding: 2px;
 }
